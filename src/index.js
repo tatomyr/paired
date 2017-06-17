@@ -14,3 +14,6 @@ const paired = (customKey = 'key', customVal = 'val') => {
     objToArr,
   };
 }
+
+// export default paired;
+module.exports = paired;
