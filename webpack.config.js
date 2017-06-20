@@ -7,6 +7,7 @@ var config = {
   // devtool: 'source-map', // ??
   output: {
     path: __dirname + '/lib',
+    // publicPath: '/assets/',
     filename: libraryName + '.babel.js',
     // This part is dedicated to create a proper module:
     library: libraryName,
