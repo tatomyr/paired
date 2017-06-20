@@ -19,11 +19,25 @@ describe('#paired', () => {
     const result = paired('index').objToArr(arrAsObj);
     expect(JSON.stringify(result)).to.equal('[{"index":"0","val":"a"},{"index":"1","val":"b"},{"index":"2","val":"c"}]');
   });
-  it('should throw an error because of type mismatch', () => {
+  it('should throw an error because of type mismatch (array expexted, object given)', () => {
     try {
       paired().arrToObj({});
     } catch (err) {
-      expect(err.message).to.equal('Argument must be an Array instance');
+      expect(err.message).to.equal('The argument must be an Array instance');
+    }
+  });
+  it('should throw an error because of type mismatch (object expexted, null given)', () => {
+    try {
+      paired().objToArr(null);
+    } catch (err) {
+      expect(err.message).to.equal('The argument must be an Object');
+    }
+  });
+  it('should throw an error because of type mismatch (object expexted, string given)', () => {
+    try {
+      paired().objToArr('foo bar');
+    } catch (err) {
+      expect(err.message).to.equal('The argument must be an Object');
     }
   });
 

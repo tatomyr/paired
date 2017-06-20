@@ -4,6 +4,14 @@ const paired = (customKey = 'key', customVal = 'val') => {
     [customVal]: obj[key]
   }));
 
+  const checkObject = obj => {
+    if (typeof obj !== 'object' || obj === null) {
+      throw new TypeError('The argument must be an Object')
+    }
+
+    return objToArr(obj);
+  }
+
   const arrToObj = arr => arr.reduce((
     prev,
     { [customKey]: key, [customVal]: val }
@@ -11,14 +19,14 @@ const paired = (customKey = 'key', customVal = 'val') => {
 
   const checkArray = arr => {
     if (!Array.isArray(arr)) {
-      throw new TypeError('Argument must be an Array instance');
+      throw new TypeError('The argument must be an Array instance');
     }
 
     return arrToObj(arr);
   }
 
   return {
-    objToArr,
+    objToArr: checkObject,
     arrToObj: checkArray,
   };
 }
