@@ -2,8 +2,9 @@
   "name": "paired",
   "version": "0.0.1",
   "description": "Converts objects to appropriate key-val paired arrays and vice-versa",
-  "main": "lib/paired.js",
+  "main": "lib/paired.babel.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "scripts": {
@@ -20,7 +21,7 @@
     "array",
     "paired"
   ],
-  "author": "tatomyr <andrew.tatomyr@gmail.com>",
+  "author": "tatomyr",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tatomyr/paired/issues"
